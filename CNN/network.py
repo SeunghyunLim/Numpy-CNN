@@ -34,6 +34,15 @@ def conv(image, label, params, conv_s, pool_f, pool_s):
     (nf2, dim2, _) = pooled.shape
     fc = pooled.reshape((nf2 * dim2 * dim2, 1)) # flatten pooled layer
     
+    #print(conv1.shape)
+    #print(conv2.shape)
+    #print(pooled.shape)
+    #print(fc.shape)
+    #print(f1.shape)
+    #print(f2.shape)
+    #print(w3.shape)
+    #print(w4.shape)
+    
     z = w3.dot(fc) + b3 # first dense layer
     z[z<=0] = 0 # pass through ReLU non-linearity
     
